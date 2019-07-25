@@ -1,7 +1,7 @@
 {
   "name": "np-cli",
   "description": "The NoProtocol Command Line Interface",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Yaro Schiffelers",
   "bin": {
     "np": "./bin/run"
