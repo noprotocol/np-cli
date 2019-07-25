@@ -1,7 +1,7 @@
 {
   "name": "@noprotocol/np-cli",
   "description": "The NoProtocol Command Line Interface",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "author": "Yaro Schiffelers",
   "bin": {
     "np": "./bin/run"
@@ -13,7 +13,7 @@
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "version": "oclif-dev readme && git add README.md",
     "release": "standard-version",
-    "pub": "npm publish --access public"
+    "pub": "git push --follow-tags origin master && npm publish --access public"
   },
   "husky": {
     "hooks": {
