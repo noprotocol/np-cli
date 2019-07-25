@@ -5,10 +5,10 @@ The NoProtocol Command Line Interface
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/np-cli.svg)](https://npmjs.org/package/np-cli)
+[![Version](https://img.shields.io/npm/v/@noprotocol/np-cli.svg)](https://npmjs.org/package/@noprotocol/np-cli)
 [![CircleCI](https://circleci.com/gh/noprotocol/np-cli/tree/master.svg?style=shield)](https://circleci.com/gh/noprotocol/np-cli/tree/master)
-[![Downloads/week](https://img.shields.io/npm/dw/np-cli.svg)](https://npmjs.org/package/np-cli)
-[![License](https://img.shields.io/npm/l/np-cli.svg)](https://github.com/noprotocol/np-cli/blob/master/package.json)
+[![Downloads/week](https://img.shields.io/npm/dw/@noprotocol/np-cli.svg)](https://npmjs.org/package/@noprotocol/np-cli)
+[![License](https://img.shields.io/npm/l/@noprotocol/np-cli.svg)](https://github.com/noprotocol/np-cli/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
