@@ -40,6 +40,11 @@ jobs:
             - ~/cli/node_modules
             - /usr/local/share/.cache/yarn
             - /usr/local/share/.config/yarn
+  commitlint: 
+    <<: *test 
+      - run: 
+          name: Lint commit messages 
+          command: yarn commitlint-circle
 
 workflows:
   version: 2
@@ -54,3 +59,4 @@ workflows:
               only: /^v.*/
             branches:
               ignore: /.*/
+      - commitlint
