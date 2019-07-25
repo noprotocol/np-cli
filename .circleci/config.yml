@@ -1,6 +1,21 @@
 ---
 version: 2
 jobs:
+  commitlint:
+    docker:
+      - image: node:latest
+    steps: 
+      - checkout
+      - restore_cache: &restore_cache
+          keys:
+            - v1-npm-{{checksum ".circleci/config.yml"}}-{{checksum "yarn.lock"}}
+            - v1-npm-{{checksum ".circleci/config.yml"}}
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run: 
+          name: Lint commit messages 
+          command: yarn commitlint-circle
   node-latest: &test
     docker:
       - image: node:latest
@@ -40,16 +55,11 @@ jobs:
             - ~/cli/node_modules
             - /usr/local/share/.cache/yarn
             - /usr/local/share/.config/yarn
-  commitlint: 
-    <<: *test 
-      - run: 
-          name: Lint commit messages 
-          command: yarn commitlint-circle
-
 workflows:
   version: 2
   "np-cli":
     jobs:
+      - commitlint
       - node-latest
       - node-8
       - node-10
@@ -59,4 +69,3 @@ workflows:
               only: /^v.*/
             branches:
               ignore: /.*/
-      - commitlint
