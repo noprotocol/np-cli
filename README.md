@@ -17,11 +17,11 @@ The NoProtocol Command Line Interface
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g np-cli
+$ npm install -g @noprotocol/np-cli
 $ np COMMAND
 running command...
 $ np (-v|--version|version)
-np-cli/0.2.0 darwin-x64 node-v12.4.0
+@noprotocol/np-cli/0.2.2 darwin-x64 node-v12.4.0
 $ np --help [COMMAND]
 USAGE
   $ np COMMAND
@@ -96,7 +96,7 @@ DESCRIPTION
   Extra documentation goes here
 ```
 
-_See code: [src/commands/hello.js](https://github.com/noprotocol/np-cli/blob/v0.2.0/src/commands/hello.js)_
+_See code: [src/commands/hello.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/hello.js)_
 
 ## `np help [COMMAND]`
 

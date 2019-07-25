@@ -13,7 +13,7 @@
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "version": "oclif-dev readme && git add README.md",
     "release": "standard-version",
-    "pub": "npm publish --access public"
+    "pub": "git push --follow-tags origin master && npm publish --access public"
   },
   "husky": {
     "hooks": {
