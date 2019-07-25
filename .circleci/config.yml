@@ -1,6 +1,13 @@
 ---
 version: 2
 jobs:
+  commitlint:
+    docker:
+      - image: node:latest
+    steps: 
+      - run: 
+          name: Lint commit messages 
+          command: yarn commitlint-circle
   node-latest: &test
     docker:
       - image: node:latest
@@ -40,16 +47,11 @@ jobs:
             - ~/cli/node_modules
             - /usr/local/share/.cache/yarn
             - /usr/local/share/.config/yarn
-  commitlint: 
-    <<: *test 
-      - run: 
-          name: Lint commit messages 
-          command: yarn commitlint-circle
-
 workflows:
   version: 2
   "np-cli":
     jobs:
+      - commitlint
       - node-latest
       - node-8
       - node-10
@@ -59,4 +61,3 @@ workflows:
               only: /^v.*/
             branches:
               ignore: /.*/
-      - commitlint
