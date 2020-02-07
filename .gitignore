@@ -5,3 +5,9 @@
 /package-lock.json
 /tmp
 node_modules
+.yaroprettierrc
+.DS_Store
+.env
+np.iml
+/.idea
+

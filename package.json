@@ -12,6 +12,7 @@
     "prepack": "oclif-dev manifest && oclif-dev readme",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "version": "oclif-dev readme && git add README.md",
+    "format": "prettier --config ./.prettierrc --write './src/**/*.{js,json}'",
     "release": "standard-version",
     "pub": "git push --follow-tags origin master && npm publish --access public"
   },
@@ -31,8 +32,12 @@
     "@oclif/plugin-update": "^1.3.9",
     "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "aws-sdk": "^2.499.0",
+    "dotenv": "^8.0.0",
+    "fs-extra": "^8.1.0",
+    "heroku-cli-util": "^8.0.11",
     "inquirer": "^6.5.0",
-    "listr": "^0.14.3"
+    "listr": "^0.14.3",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
@@ -67,7 +72,15 @@
       "@oclif/plugin-warn-if-update-available",
       "@oclif/plugin-commands",
       "@oclif/plugin-autocomplete"
-    ]
+    ],
+    "topics": {
+		"s3": {
+			"description": "amazon Web Service S3 Commands"
+		},
+		"rds": {
+			"description": "amazone Web Service RDS Commands"
+		}
+	}
   },
   "homepage": "https://github.com/noprotocol/np-cli",
   "bugs": "https://github.com/noprotocol/np-cli/issues",

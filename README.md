@@ -31,14 +31,22 @@ USAGE
 # Commands
 <!-- commands -->
 * [`np autocomplete [SHELL]`](#np-autocomplete-shell)
+* [`np boiler:craftvue`](#np-boilercraftvue)
 * [`np commands`](#np-commands)
-* [`np hello`](#np-hello)
 * [`np help [COMMAND]`](#np-help-command)
 * [`np plugins`](#np-plugins)
 * [`np plugins:install PLUGIN...`](#np-pluginsinstall-plugin)
 * [`np plugins:link PLUGIN`](#np-pluginslink-plugin)
 * [`np plugins:uninstall PLUGIN...`](#np-pluginsuninstall-plugin)
 * [`np plugins:update`](#np-pluginsupdate)
+* [`np rds:info`](#np-rdsinfo)
+* [`np s3:create`](#np-s3create)
+* [`np s3:delete`](#np-s3delete)
+* [`np s3:list`](#np-s3list)
+* [`np s3:list-content`](#np-s3list-content)
+* [`np s3:policy`](#np-s3policy)
+* [`np s3:set`](#np-s3set)
+* [`np setup:craftvue`](#np-setupcraftvue)
 * [`np update [CHANNEL]`](#np-update-channel)
 
 ## `np autocomplete [SHELL]`
@@ -64,6 +72,24 @@ EXAMPLES
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.2/src/commands/autocomplete/index.ts)_
 
+## `np boiler:craftvue`
+
+Describe the command here
+
+```
+USAGE
+  $ np boiler:craftvue
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/boiler/craftvue.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/boiler/craftvue.js)_
+
 ## `np commands`
 
 list all the commands
@@ -79,24 +105,6 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v1.2.2/src/commands/commands.ts)_
-
-## `np hello`
-
-Describe the command here
-
-```
-USAGE
-  $ np hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/hello.js)_
 
 ## `np help [COMMAND]`
 
@@ -231,6 +239,155 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
+
+## `np rds:info`
+
+RDS info
+
+```
+USAGE
+  $ np rds:info
+
+OPTIONS
+  -r, --region=region  name of the region where the new bucket should be created
+
+DESCRIPTION
+  RDS info
+```
+
+_See code: [src/commands/rds/info.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/rds/info.js)_
+
+## `np s3:create`
+
+Creates a new AWS S3 bucket.
+
+```
+USAGE
+  $ np s3:create
+
+OPTIONS
+  -C, --no-config      do not use the default settings while creating the bucket (so you may set it yourself
+  -n, --name=name      name of the new bucket
+  -r, --region=region  name of the region where the new bucket should be created
+
+DESCRIPTION
+  Creates a new AWS S3 bucket.
+
+ALIASES
+  $ np newbucket
+  $ np createbucket
+  $ np newS3
+  $ np new
+```
+
+_See code: [src/commands/s3/create.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/s3/create.js)_
+
+## `np s3:delete`
+
+Delete a S3 bucket.
+
+```
+USAGE
+  $ np s3:delete
+
+OPTIONS
+  -n, --name=name  name of the bucket to delete
+
+DESCRIPTION
+  Delete a S3 bucket.
+```
+
+_See code: [src/commands/s3/delete.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/s3/delete.js)_
+
+## `np s3:list`
+
+Lists all S3 buckets form a specific region.
+
+```
+USAGE
+  $ np s3:list
+
+OPTIONS
+  -r, --region=region  name of the region where the new bucket should be created
+
+DESCRIPTION
+  Lists all S3 buckets form a specific region.
+```
+
+_See code: [src/commands/s3/list.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/s3/list.js)_
+
+## `np s3:list-content`
+
+Describe the command here
+
+```
+USAGE
+  $ np s3:list-content
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/s3/list-content.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/s3/list-content.js)_
+
+## `np s3:policy`
+
+List and edit the policy of a S3 bucket.
+
+```
+USAGE
+  $ np s3:policy
+
+OPTIONS
+  -n, --name=name  name of the bucket
+  -r, --read       prints the policy of a bucket
+```
+
+_See code: [src/commands/s3/policy.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/s3/policy.js)_
+
+## `np s3:set`
+
+```
+USAGE
+  $ np s3:set
+```
+
+_See code: [src/commands/s3/set.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/s3/set.js)_
+
+## `np setup:craftvue`
+
+Creates a new project based on the np-craftvue boilerplate, including everything you need to get started right away. 
+
+```
+USAGE
+  $ np setup:craftvue
+
+OPTIONS
+  -d, --default    use the default settings to initialize this project.
+  -n, --name=name  name of your project.
+
+DESCRIPTION
+  Creates a new project based on the np-craftvue boilerplate, including everything you need to get started right away. 
+
+  Batteries-included: 
+  - Clone boilerplate 
+  - Local git init 
+  - Github init
+  - Github branch setup (develop, staging, master) 
+  - Heroku pipeline setup
+  - Creates Heroku apps for each selected environment
+  - Setup Heroku app.json configuration 
+  - Set correct .env variables for each new Heroku app 
+  - Enable Heroku auto-deploy  
+  - S3 bucket and user creation 
+  - RDS database and user creation
+```
+
+_See code: [src/commands/setup/craftvue.js](https://github.com/noprotocol/np-cli/blob/v0.2.2/src/commands/setup/craftvue.js)_
 
 ## `np update [CHANNEL]`
 
